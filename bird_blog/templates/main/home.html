@@ -1,9 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-    <header>
-
-    </header>
-
+    
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -12,8 +9,18 @@
         <link rel="stylesheet" href="{% static 'main/home.css' %}">
     </head>
 
+    <header class="top-bar">
+        <div class="top-bar-left">
+            <h1>BirdBlog</h1>
+        </div>
+
+        <div class="top-bar-right">
+            <a href="/users/login/" class="auth-link">Ingresa/Registrate</a>
+        </div>
+    </header>
+
     <body>
-        <h1>hola</h1>
+        
     </body>
 
     <script src="{% static 'main/home.js' %}"></script>

@@ -1,0 +1,44 @@
+@import url('https://fonts.googleapis.com/css2?family=Mali&family=Overpass:wght@200&family=Roboto+Condensed&family=Schoolbell&display=swap');
+
+/* Estilo del borde superior */
+.top-bar {
+    width: 100%;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: #533e2d; /* Color de fondo */
+}
+
+/* Estilo del lado izquierdo */
+.top-bar-left h1 {
+    margin: 0;
+    font-size: 1.8rem;
+    color: #ede0d4;
+    font-family: "Schoolbell";
+}
+
+/* Estilo del lado derecho */
+.top-bar-right {
+    font-size: 1.2rem;
+    font-family: "Schoolbell";
+}
+
+.auth-link {
+    text-decoration: none;
+    color: #ede0d4;
+    margin: 0 5px;
+}
+
+.auth-link:hover {
+    text-decoration: underline;
+}
+
+
+body {
+    background-color: #fefae0;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+}
