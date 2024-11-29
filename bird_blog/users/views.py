@@ -1,30 +1,31 @@
 from django.shortcuts import render, redirect
-from django.contrib.auth import login, authenticate
-from django.contrib.auth.forms import AuthenticationForm, UserCreationForm
-
-# Create your views here.
+from django.contrib.auth import login
+from .forms import CustomAuthenticationForm, CustomUserCreationForm
 
 def login_register(request):
     if request.method == 'POST':
-        if 'login' in request.POST:  # Si es una solicitud de login
-            form = AuthenticationForm(request, data=request.POST)
-            if form.is_valid():
-                user = form.get_user()
+        if 'login' in request.POST:
+            form_login = CustomAuthenticationForm(request, data=request.POST)
+            form_register = CustomUserCreationForm()
+            if form_login.is_valid():
+                user = form_login.get_user()
                 login(request, user)
-                return redirect('home')  # Redirige al home si el login es exitoso
-        elif 'register' in request.POST:  # Si es una solicitud de registro
-            form = UserCreationForm(request.POST)
-            if form.is_valid():
-                user = form.save()
-                login(request, user)  # Inicia sesión automáticamente al registrar
+                return redirect('home')
+        elif 'register' in request.POST:
+            form_register = CustomUserCreationForm(request.POST)
+            form_login = CustomAuthenticationForm()
+            if form_register.is_valid():
+                user = form_register.save()
+                login(request, user)
                 return redirect('home')
     else:
-        form_login = AuthenticationForm()
-        form_register = UserCreationForm()
+        form_login = CustomAuthenticationForm()
+        form_register = CustomUserCreationForm()
 
     return render(request, 'users/login_register.html', {
         'form_login': form_login,
-        'form_register': form_register
+        'form_register': form_register,
     })
+
 
 

@@ -5,7 +5,7 @@
 }
 
 body {
-	background: #f6f5f7;
+	background: #533e2d;
 	display: flex;
 	justify-content: center;
 	align-items: center;
@@ -17,7 +17,7 @@ body {
 
 h1 {
 	font-weight: bold;
-	margin: 0;
+	margin-bottom: 20px;
 }
 
 h2 {
@@ -44,10 +44,11 @@ a {
 }
 
 button {
+	margin-top: 30px;
 	border-radius: 20px;
-	border: 1px solid #FF4B2B;
-	background-color: #FF4B2B;
-	color: #FFFFFF;
+	border: 1px solid #606c38;
+	background-color: #606c38;
+	color: #fefae0;
 	font-size: 12px;
 	font-weight: bold;
 	padding: 12px 45px;
@@ -78,6 +79,8 @@ form {
 	padding: 0 50px;
 	height: 100%;
 	text-align: center;
+	overflow-y: auto; /* Permite el desplazamiento vertical */
+	max-height: 80vh; /* Limita la altura máxima del formulario */
 }
 
 input {
@@ -85,6 +88,15 @@ input {
 	border: none;
 	padding: 12px 15px;
 	margin: 8px 0;
+	width: 100%;
+	border-radius: 5px; /* Bordes redondeados */
+	font-size: 14px; /* Tamaño de texto más legible */
+}
+
+label {
+	font-weight: bold;
+	margin-top: 10px;
+	text-align: left;
 	width: 100%;
 }
 
@@ -95,9 +107,10 @@ input {
 			0 10px 10px rgba(0,0,0,0.22);
 	position: relative;
 	overflow: hidden;
-	width: 768px;
+	width: 800px;
 	max-width: 100%;
-	min-height: 480px;
+	min-height: 600px;
+	display: flex; /* Flexbox para ajustar el contenido */
 }
 
 .form-container {
@@ -122,6 +135,7 @@ input {
 	width: 50%;
 	opacity: 0;
 	z-index: 1;
+	font-size: 15px;
 }
 
 .container.right-panel-active .sign-up-container {
@@ -159,9 +173,9 @@ input {
 }
 
 .overlay {
-	background: #FF416C;
-	background: -webkit-linear-gradient(to right, #FF4B2B, #FF416C);
-	background: linear-gradient(to right, #FF4B2B, #FF416C);
+	background: #606c38;
+	background: -webkit-linear-gradient(to right, #606c38, #606c38);
+	background: linear-gradient(to right, #606c38, #606c38);
 	background-repeat: no-repeat;
 	background-size: cover;
 	background-position: 0 0;
@@ -170,12 +184,12 @@ input {
 	left: -100%;
 	height: 100%;
 	width: 200%;
-  	transform: translateX(0);
+	transform: translateX(0);
 	transition: transform 0.6s ease-in-out;
 }
 
 .container.right-panel-active .overlay {
-  	transform: translateX(50%);
+	transform: translateX(50%);
 }
 
 .overlay-panel {
@@ -210,42 +224,48 @@ input {
 	transform: translateX(20%);
 }
 
-.social-container {
-	margin: 20px 0;
+
+/* Mensaje de restricciones */
+/* Estilo del icono de pajarito */
+.tooltip-icon {
+    margin-right: 8px; /* Espacio entre el ícono y el texto */
+    font-size: 18px; /* Tamaño del ícono */
+    color: #4caf50; /* Color verde */
+    vertical-align: middle; /* Alinea el ícono con el texto */
+    cursor: pointer; /* Cambiar cursor cuando el usuario pasa por encima */
 }
 
-.social-container a {
-	border: 1px solid #DDDDDD;
-	border-radius: 50%;
-	display: inline-flex;
-	justify-content: center;
-	align-items: center;
-	margin: 0 5px;
-	height: 40px;
-	width: 40px;
-}
-
-footer {
-    background-color: #222;
-    color: #fff;
+/* Estilo del tooltip (mensaje de restricciones) */
+.tooltip-text {
+    display: none;
+    position: absolute;
+    background-color: #333;
+    color: white;
+    text-align: left;
+    padding: 10px;
+    border-radius: 5px;
     font-size: 14px;
-    bottom: 0;
-    position: fixed;
-    left: 0;
-    right: 0;
-    text-align: center;
-    z-index: 999;
+    max-width: 300px; /* Aumentamos el ancho máximo */
+    word-wrap: break-word; /* Permite que el texto se ajuste si es muy largo */
+    white-space: normal; /* Hace que el texto se ajuste en varias líneas */
+    z-index: 10;
+    bottom: 100%; /* Mostrar arriba del ícono */
+    left: 50%;
+    transform: translateX(-50%);
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity 0.3s;
 }
 
-footer p {
-    margin: 10px 0;
+/* Mostrar el tooltip cuando el usuario pasa el ratón sobre el ícono */
+.tooltip-icon:hover + .tooltip-text {
+    display: block;
+    visibility: visible;
+    opacity: 1;
 }
 
-footer i {
-    color: red;
-}
-
-footer a {
-    color: #3c97bf;
-    text-decoration: none;
+/* Posición del label para que el tooltip no se sobreponga */
+label {
+    position: relative;
+    display: inline-block;
 }

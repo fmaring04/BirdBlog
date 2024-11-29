@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sign In/Up Form</title>
+    <title>Login</title>
     {% load static %}
     <link rel="stylesheet" href="{% static 'users/login_register.css' %}">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
@@ -14,9 +14,33 @@
         <div class="form-container sign-up-container">
             <form method="post" action="">
                 {% csrf_token %}
-                <h1>Create Account</h1>
-                {{ form_register.as_p }}
-                <button type="submit" name="register">Sign Up</button>
+                <h1>Crea tu cuenta</h1>
+
+                <label for="id_username">
+                    <i class="fas fa-dove tooltip-icon"></i> Nombre de Usuario:
+                    <span class="tooltip-text">Nombre de usuario: entre 5 y 20 caracteres.</span>
+                </label>
+                {{ form_register.username }}
+
+                <label for="id_email">
+                    <i class="fas fa-dove tooltip-icon"></i> Correo Electrónico:
+                    <span class="tooltip-text">Correo válido, por ejemplo: usuario@dominio.com</span>
+                </label>
+                {{ form_register.email }}
+
+                <label for="id_password1">
+                    <i class="fas fa-dove tooltip-icon"></i> Contraseña:
+                    <span class="tooltip-text">Contraseña: al menos 8 caracteres, incluye mayúsculas, minúsculas y números.</span>
+                </label>
+                {{ form_register.password1 }}
+                
+                <label for="id_password2">
+                    <i class="fas fa-dove tooltip-icon"></i> Confirmar Contraseña:
+                    <span class="tooltip-text">Confirmar contraseña: debe coincidir con la contraseña anterior.</span>
+                </label>
+                {{ form_register.password2 }}
+
+                <button type="submit" name="register">Registrar</button>
             </form>
         </div>
 
@@ -24,9 +48,21 @@
         <div class="form-container sign-in-container">
             <form method="post" action="">
                 {% csrf_token %}
-                <h1>Sign in</h1>
-                {{ form_login.as_p }}
-                <button type="submit" name="login">Sign In</button>
+                <h1>Ingresa aquí</h1>
+
+                <label for="id_username">
+                    <i class="fas fa-dove tooltip-icon"></i> Usuario o Correo Electrónico:
+                    <span class="tooltip-text">Ingresa tu nombre de usuario o correo electrónico.</span>
+                </label>
+                {{ form_login.username }}
+                
+                <label for="id_password">
+                    <i class="fas fa-dove tooltip-icon"></i> Contraseña:
+                    <span class="tooltip-text">La contraseña debe coincidir con la de registro.</span>
+                </label>
+                {{ form_login.password }}
+
+                <button type="submit" name="login">Ingresa</button>
             </form>
         </div>
 
@@ -34,14 +70,14 @@
         <div class="overlay-container">
             <div class="overlay">
                 <div class="overlay-panel overlay-left">
-                    <h1>Welcome Back!</h1>
-                    <p>To keep connected with us please login with your personal info</p>
-                    <button class="ghost" id="signIn">Sign In</button>
+                    <h1>Bienvenido/a!</h1>
+                    <p>Sigue compartiendo con nosotros!</p>
+                    <button class="ghost" id="signIn">Ingresa</button>
                 </div>
                 <div class="overlay-panel overlay-right">
-                    <h1>Hello, Friend!</h1>
-                    <p>Enter your personal details and start your journey with us</p>
-                    <button class="ghost" id="signUp">Sign Up</button>
+                    <h1>Únete!</h1>
+                    <p>Ingresa tus datos y comparte con nosotros sobre las hermosas aves de chile!</p>
+                    <button class="ghost" id="signUp">Registrate</button>
                 </div>
             </div>
         </div>
