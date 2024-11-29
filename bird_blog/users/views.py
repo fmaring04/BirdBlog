@@ -1,5 +1,5 @@
 from django.shortcuts import render, redirect
-from django.contrib.auth import login
+from django.contrib.auth import login, logout
 from .forms import CustomAuthenticationForm, CustomUserCreationForm
 
 def login_register(request):
@@ -27,5 +27,8 @@ def login_register(request):
         'form_register': form_register,
     })
 
+def logout_view(request):
+    logout(request)  # Cierra la sesión del usuario
+    return redirect('home')  # Redirige al usuario a la página de inicio
 
 
