@@ -1,5 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Mali&family=Overpass:wght@200&family=Roboto+Condensed&family=Schoolbell&display=swap');
 
+* {
+    font-family: "Schoolbell";
+}
+
 /* Estilo del borde superior */
 .top-bar {
     width: 100%;
@@ -14,15 +18,14 @@
 /* Estilo del lado izquierdo */
 .top-bar-left h1 {
     margin: 0;
+    margin-left: 20px;
     font-size: 1.8rem;
     color: #ede0d4;
-    font-family: "Schoolbell";
 }
 
 /* Estilo del lado derecho */
 .top-bar-right {
     font-size: 1.2rem;
-    font-family: "Schoolbell";
 }
 
 .auth-link {
@@ -33,6 +36,7 @@
 
 .auth-link:hover {
     text-decoration: underline;
+    color: #ffaf66;
 }
 
 
@@ -42,3 +46,46 @@ body {
     padding: 0;
     width: 100%;
 }
+
+/* Estilo Tarjetas Pajaros */
+.birds-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px; /* Espacio entre tarjetas */
+    justify-content: center;
+    padding: 20px;
+  }
+  
+  .bird-card {
+    background-color: #ffffff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    max-width: 300px;
+    text-align: center;
+    transition: transform 0.2s, box-shadow 0.2s;
+  }
+  
+  .bird-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  }
+  
+  .bird-image {
+    width: 100%;
+    height: auto;
+    border-bottom: 1px solid #ddd;
+  }
+  
+  .bird-name {
+    font-size: 1.5em;
+    margin: 10px 0;
+  }
+  
+  .bird-description {
+    font-size: 1em;
+    color: #555;
+    padding: 0 10px 10px;
+  }
+  

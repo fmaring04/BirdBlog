@@ -9,18 +9,105 @@
         <link rel="stylesheet" href="{% static 'main/home.css' %}">
     </head>
 
-    <header class="top-bar">
-        <div class="top-bar-left">
-            <h1>BirdBlog</h1>
-        </div>
-
-        <div class="top-bar-right">
-            <a href="/users/login/" class="auth-link">Ingresa/Registrate</a>
-        </div>
-    </header>
-
     <body>
+        <!-- Parte Superior -->
+
+        <header class="top-bar">
+            <div class="top-bar-left">
+                <h1>BirdBlog</h1>
+            </div>
+    
+            <div class="top-bar-right">
+                <a href="/users/login/" class="auth-link">Ingresa/Registrate</a>
+            </div>
+        </header>
         
+        <!-- Tarjetas Pajaros -->
+
+        <div class="birds-container">
+            <div class="bird-card">
+              <img src="static/img/bailarin.jpg" alt="Bird 1" class="bird-image">
+              <h3 class="bird-name">Bailarín</h3>
+              <p class="bird-description">Esta elegantísima rapaz de plumaje blanco y 
+                negro habita desde el Norte de la provincia de Atacama hasta Valdivia, 
+                teniendo el centro de su distribución entre los ríos Aconcagua y Bio-Bio, 
+                frecuenta de preferencia la precordillera, los cerros bajos con arbustos, 
+                y espinos del Valle Central y los lechos de los ríos, pero viéndose también 
+                en ocasiones en las zonas cultivadas.</p>
+            </div>
+          
+            <div class="bird-card">
+              <img src="static/img/chuncho.jpg" alt="Bird 2" class="bird-image">
+              <h3 class="bird-name">Chuncho</h3>
+              <p class="bird-description">El Chuncho es por mucho la más pequeña de las 
+                aves de rapiña que viven en Chile, encontrándose desde el Norte de la 
+                provincia de Atacama (Vallenar y Copiapó) hasta Magallanes y Tierra 
+                del Fuego. Aunque más diurno en sus costumbres que la mayoría de las 
+                Rapaces nocturnas, no se le ve muy a menudo, seguramente por su misma 
+                pequeñez, vuelo silencioso y costumbre de posarse inmóvil entre las 
+                ramas de los árboles.</p>
+            </div>
+            
+            <div class="bird-card">
+                <img src="static/img/pequen.jpg" alt="Bird 3" class="bird-image">
+                <h3 class="bird-name">Pequén</h3>
+                <p class="bird-description">El Pequén se muestra especialmente partidario 
+                    de los terrenos arenosos de la zona de la costa y de los faldeos 
+                    escasamente vegetados de la precordillera.</p>
+            </div>
+
+            <div class="bird-card">
+                <img src="static/img/peuco.jpg" alt="Bird 4" class="bird-image">
+                <h3 class="bird-name">Peuco</h3>
+                <p class="bird-description">Por la mayor parte de su zona de distribución 
+                    que se extiende desde Arica hasta Chiloé y Aysen, el Peuco es tal vez 
+                    una de los más abundantes y mejor conocidas de las aves de rapiña que 
+                    cazan su presa al vuelo. Se le encuentra desde la precordillera hasta 
+                    la costa, mostrando cierta preferencia por la campiña abierta y los 
+                    cerros bajos cubiertos de arbustos.</p>
+            </div>
+            
+            <div class="bird-card">
+                <img src="static/img/picurio.jpg" alt="Bird 5" class="bird-image">
+                <h3 class="bird-name">Picurio</h3>
+                <p class="bird-description">Aunque distribuido por casi toda Sud América, 
+                    el Picurio es el más escaso de esta familia en Chile, encontrándose en 
+                    número reducido desde Coquimbo hasta Llanquihue. En lagunas y ríos 
+                    tranquilos de Concepción a Valdivia es algo común.</p>
+            </div>
+
+            <div class="bird-card">
+                <img src="static/img/piuquen.jpg" alt="Bird 6" class="bird-image">
+                <h3 class="bird-name">Piuquén</h3>
+                <p class="bird-description">Este hermoso Ganso, con su elegante traje blanco 
+                    y negro es uno de los habitantes más caracterizados de las altas cordilleras, 
+                    desde la frontera con el Perú hasta Nuble. Anida exclusivamente en esta zona a 
+                    alturas mayores de 3.000 metros, pero en invierno baja en bandadas a las llanuras 
+                    pastadas o pantanosas del Valle Central. Ave de gran tamaño, pues mide algo más de 
+                    70 cms., y de plumaje enteramente blanco a excepción de las alas y la cola que son 
+                    negras, el Piuquén se destaca y se identifica con facilidad en cualquier ambiente.</p>
+            </div>
+
+            <div class="bird-card">
+                <img src="static/img/sietecolores.jpg" alt="Bird 7" class="bird-image">
+                <h3 class="bird-name">Sietecolores</h3>
+                <p class="bird-description">De tamaño más chico que el Chercán, pero igualmente 
+                    inquieto y vivaracho, el Sietecolores es una preciosura de avecita que se 
+                    destacaría en cualquier ambiente o compañía por la extraordinaria belleza 
+                    de los siete colores diferentes que ostenta en su plumaje (amarillo, azul, 
+                    blanco, bronceado, carmesí, negro y verde) formando entre sí un conjunto 
+                    tan armonioso у bello como para entusiasmar a cualquiera.</p>
+            </div>
+
+            <div class="bird-card">
+                <img src="static/img/tortola.jpg" alt="Bird 8" class="bird-image">
+                <h3 class="bird-name">Tórtola Común</h3>
+                <p class="bird-description">Muy abundante desde Coquimbo hasta Aysen y ocasional 
+                    en Atacama y el territorio magallánico, esta Tórtola es, sin duda, el ave de 
+                    caza chilena por excelencia. Se la encuentra por igual en todas partes del 
+                    Valle Central, en la zona de la costa y hasta unos 2.000 metros en la cordillera de los Andes.</p>
+            </div>
+          </div>
     </body>
 
     <script src="{% static 'main/home.js' %}"></script>
