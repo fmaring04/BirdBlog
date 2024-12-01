@@ -1,9 +1,6 @@
 # Ignorar la carpeta secrets
 secrets/
 
-# Ignorar archivos de bases de datos locales
-*.sqlite3
-
 # Ignorar archivos de logs
 *.log
 

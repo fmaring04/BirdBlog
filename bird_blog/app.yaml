@@ -1,0 +1,17 @@
+runtime: python39  # Especifica la versión de Python que quieres usar. Puedes cambiarla si es necesario.
+
+env_variables:
+  DJANGO_SETTINGS_MODULE: "bird_blog.settings"  # Ajusta a tu configuración de Django
+  GOOGLE_CLOUD_PROJECT: "bird-blog-chile"  # Este es el ID de tu proyecto de Google Cloud.
+
+entrypoint: gunicorn -b :$PORT bird_blog.wsgi  # El comando para arrancar tu aplicación con Gunicorn.
+
+handlers:
+- url: /static
+  static_dir: static/  # Aquí se manejan los archivos estáticos de tu aplicación Django.
+
+- url: /.*  # Esto envía todas las demás solicitudes a tu aplicación Django.
+  script: auto
+
+instance_class: F2  # Opcional: Define la clase de la instancia de Google Cloud App Engine (por ejemplo, F2, F4, etc.)
+
